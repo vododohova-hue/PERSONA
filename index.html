@@ -97,19 +97,30 @@
   }
   .hero-nav a {
     display: inline-block;
-    color: #f6efe2;
+    color: #fdf9ef;
+    background: var(--accent-light);
     font-family: Georgia, serif;
     font-style: italic;
     font-size: 0.92rem;
     text-decoration: none;
-    border: 1px solid rgba(246,239,226,0.5);
+    border: 1px solid var(--accent-light);
     border-radius: 999px;
     padding: 8px 18px;
-    backdrop-filter: blur(2px);
+    box-shadow: 0 0 0 0 rgba(201, 96, 63, 0.55);
+    animation: pulse-glow 2.6s ease-in-out infinite;
+    transition: transform 0.2s ease, background 0.2s ease;
   }
   .hero-nav a:hover {
-    border-color: var(--accent-light);
-    color: var(--accent-light);
+    background: var(--accent);
+    border-color: #fdf9ef;
+    color: #fff;
+    transform: translateY(-2px);
+    animation-play-state: paused;
+  }
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(201, 96, 63, 0.55); }
+    70% { box-shadow: 0 0 0 10px rgba(201, 96, 63, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(201, 96, 63, 0); }
   }
 
   /* ---------- SECTIONS ---------- */
@@ -274,10 +285,10 @@
     position: relative;
     min-height: 60vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     isolation: isolate;
-    padding: 60px 24px;
+    padding: 48px 24px 60px;
   }
   .finale::before {
     content: "";
@@ -295,13 +306,15 @@
   }
   .finale blockquote {
     margin: 0;
-    max-width: 680px;
+    max-width: 1080px;
     text-align: center;
-    color: #f7f0e2;
-    font-size: clamp(1.3rem, 3.2vw, 1.9rem);
-    font-style: italic;
+    text-wrap: balance;
+    color: #fffdf8;
+    font-size: clamp(1.05rem, 2.3vw, 1.4rem);
+    font-style: normal;
+    font-weight: 600;
     line-height: 1.5;
-    text-shadow: 0 2px 16px rgba(0,0,0,0.6);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.95), 0 4px 18px rgba(0,0,0,0.75);
   }
   .finale cite {
     display: block;
@@ -369,7 +382,7 @@
         <li>В ЧП «Вектор технологий» и ООО «Вектор технологий СПБ» внедряла Управление торговлей и Бухгалтерию предприятия — для рынков Беларуси и России одновременно.</li>
         <li>В ООО «ПРОМАИР» внедряла Управление торговлей, Бухгалтерию предприятия и Зарплату и управление персоналом, интеграцию с Битрикс.</li>
         <li>В «Глобал Инжиниринг» занималась интеграцией с Битрикс, обменом с торговыми площадками по API, электронным документооборотом и маркировкой товаров.</li>
-        <li>В СП «Белита» ООО внедряла и дорабатывала 1С:Документооборот 8.3.</li>
+        <li>В СП «БЕЛИТА» ООО внедряла и дорабатывала 1С:Документооборот 8.3.</li>
         <li>В АО ХК «Новотранс» дорабатываю и сопровождаю конфигурации заказчиков, оцениваю проекты на автоматизацию.</li>
         <li>Подтвердила квалификацию тремя сертификатами <strong>1С:Профессионал</strong>.</li>
       </ul>
@@ -392,7 +405,7 @@
           </div>
           <div class="card">
             <h3>Парфюмерно-косметическая промышленность</h3>
-            <p>СП «Белита» ООО — внедрение и доработка 1С:Документооборот: виды документов, маршруты согласования, права доступа, контроль поручений, интеграция с почтой и ЭДО.</p>
+            <p>СП «БЕЛИТА» ООО — внедрение и доработка 1С:Документооборот: виды документов, маршруты согласования, права доступа, контроль поручений, интеграция с почтой и ЭДО.</p>
           </div>
           <div class="card">
             <h3>Транспортная логистика</h3>
@@ -453,7 +466,7 @@
 
   <div class="finale">
     <blockquote>
-      «Формулируйте задачу по существу и в деталях — мелочь, которую вы считаете пустяком, часто и определяет, сколько времени займёт доработка».
+      «Качество того, что ты создаёшь, определяется качеством твоего планирования, точностью твоей коммуникации, строгостью твоей проверки и ясностью твоих стандартов. Это свойства практики, а не инструмента. Они накапливаются. Они не устаревают».
       <cite>Диана Вододохова · 1С:Профессионал</cite>
     </blockquote>
   </div>
